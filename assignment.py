@@ -14,14 +14,6 @@ def read_line(filename, line_number):
     file.close
 # Exercise 2
 def reverse_lines(source, destination):
-    def reverse_lines(source, destination):
-    with open(source, "r") as f:
-        lines = [line.strip() for line in f]
-    lines.reverse()
-    with open(destination, "w") as f:
-        for line in lines:
-            f.write(line + "\n")       
-    return len(lines)
 
 # Exercise 3
 def merge_files(first, second, destination):
