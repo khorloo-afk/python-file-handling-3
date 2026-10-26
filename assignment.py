@@ -4,14 +4,15 @@
 def read_line(filename, line_number):
     if line_number <= 0:
         return ""
-    with open(filename, "r") as f:
-        line = ""
-        for _ in range(line_number):
-            line = f.readline()
-            if line == "":
-                return ""
+    file = open(filename, "r")
+    line = ""
+    for _ in range(line_number):
+        line = file.readline()
+        if line == "":
+            file.close()  # Close the file before returning if line isn't found
+            return ""
+    file.close()  # Close the file after finding the target line
     return line.rstrip("\n")
-    file.close
 # Exercise 2
 def reverse_lines(source, destination):
 
