@@ -2,9 +2,16 @@
 # Exercise 1
 
 def read_line(filename, line_number):
-    # Write your code here
-    pass
-
+    if line_number <= 0:
+        return ""
+    with open(filename, "r") as f:
+        line = ""
+        for _ in range(line_number):
+            line = f.readline()
+            if line == "":
+                return ""
+    return line.rstrip("\n")
+    file.close
 # Exercise 2
 def reverse_lines(source, destination):
     def reverse_lines(source, destination):
@@ -13,8 +20,7 @@ def reverse_lines(source, destination):
     lines.reverse()
     with open(destination, "w") as f:
         for line in lines:
-            f.write(line + "\n")
-            
+            f.write(line + "\n")       
     return len(lines)
 
 # Exercise 3
